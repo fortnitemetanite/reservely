@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -8,15 +9,22 @@ const Home = () => {
     <div
       className="min-h-screen bg-cover bg-center flex flex-col justify-center items-center text-white px-4"
       style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80')`,
+        backgroundImage: `url('/beach-hero.jpeg')`, // Replace with your new image
       }}
     >
-      <h1 className="text-4xl md:text-6xl font-bold mb-4 text-center drop-shadow-lg">
-        Find Your Perfect Spot
-      </h1>
-      <p className="text-lg md:text-xl mb-8 text-center max-w-xl drop-shadow-md">
-        Reserve beaches, parking spots, and event venues instantly. Real-time availability, instant booking.
-      </p>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-center"
+      >
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+          Find Your Perfect Spot
+        </h1>
+        <p className="text-lg md:text-xl mb-8 max-w-xl mx-auto drop-shadow-md">
+          Reserve beaches, parking spots, and event venues instantly. Real-time availability, instant booking.
+        </p>
+      </motion.div>
 
       <div className="bg-white bg-opacity-90 rounded-lg p-6 w-full max-w-2xl shadow-lg">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
