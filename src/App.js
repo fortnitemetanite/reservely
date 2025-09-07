@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import Reserve from './pages/Reserve';
 import Pricing from './pages/Pricing';
+import HowItWorks from './pages/HowItWorks';
+import About from './pages/About';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import ProtectedRoute from './ProtectedRoute';
@@ -10,6 +12,7 @@ import ProtectedRoute from './ProtectedRoute';
 const App = () => {
   return (
     <Router>
+      {/* Navigation */}
       <nav className="bg-white shadow-md px-6 py-4 flex justify-between items-center">
         <div className="text-xl font-bold text-blue-600">Reservely</div>
         <div className="space-x-4 text-blue-600">
@@ -23,6 +26,7 @@ const App = () => {
         </div>
       </nav>
 
+      {/* Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
@@ -34,8 +38,8 @@ const App = () => {
           }
         />
         <Route path="/pricing" element={<Pricing />} />
-        <Route path="/how-it-works" element={<div className="p-6">How It Works Page</div>} />
-        <Route path="/about" element={<div className="p-6">About Page</div>} />
+        <Route path="/how-it-works" element={<HowItWorks />} />
+        <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
